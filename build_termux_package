@@ -21,7 +21,7 @@ INTERMEDIATES=shell-loader/build/intermediates
 DATA_DIR=$INTERMEDIATES/data
 CONTROL_DIR=$INTERMEDIATES/control
 PACKAGE_DIR=$INTERMEDIATES/package
-PREFIX=$DATA_DIR/data/data/com.termux/files/usr
+PREFIX=$DATA_DIR/data/data/com.nightmare.neo/files/usr
 
 rm -rf $DEB_PACKAGE_PATH $PACMAN_PACKAGE_PATH $DATA_DIR $CONTROL_DIR $PACKAGE_DIR $INTERMEDIATES/.PKGINFO $INTERMEDIATES/.BUILDINFO $INTERMEDIATES/.MTREE
 
@@ -46,8 +46,8 @@ Description: $TERMUX_PKG_DESCRIPTION
 EOF
 
 cat <<EOF > $CONTROL_DIR/postinst
-#!/data/data/com.termux/files/usr/bin/sh
-chmod 400 /data/data/com.termux/files/usr/libexec/termux-x11/loader.apk
+#!/data/data/com.nightmare.neo/files/usr/bin/sh
+chmod 400 /data/data/com.nightmare.neo/files/usr/libexec/termux-x11/loader.apk
 EOF
 
 mkdir -p $PACKAGE_DIR
@@ -94,7 +94,7 @@ TERMUX_PKG_INSTALLSIZE="$(du -bs $DATA_DIR | cut -f 1)"
 
 {
   echo "post_install() {"
-  echo "    chmod 400 /data/data/com.termux/files/usr/libexec/termux-x11/loader.apk"
+  echo "    chmod 400 /data/data/com.nightmare.neo/files/usr/libexec/termux-x11/loader.apk"
   echo "}"
   echo "post_upgrade() {"
   echo "    post_install"
